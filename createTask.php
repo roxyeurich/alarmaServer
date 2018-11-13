@@ -5,12 +5,11 @@ try {
   echo "Error".$e->getMessage();
 }
 
-$task_title =$_POST["task_title"];
+$group_id=$_POST["group_id"];
 $task_description =$_POST["task_description"];
-$group_id =$_POST["group_id"];
+$task_title =$_POST["task_title"];
 
-$query = "INSERT INTO tasks (task_title, task_description, group_id) VALUES ('$task_title', '$task_description', '$group_id')";
-
+$query = "INSERT INTO tasks (group_id, task_title, task_description) VALUES ('$group_id', '$task_title', '$task_description')";
 
 $result = $conn->query($query);
 if($result){

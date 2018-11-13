@@ -5,21 +5,16 @@ try {
   echo "Error".$e->getMessage();
 }
 
-$group_name =$_POST["group_name"];
-$passcode =$_POST["passcode"];
-$userid =$_POST["userid"];
-
-
-$query = "INSERT INTO groups (group_name, passcode) VALUES ('$group_name','$passcode')";
-
-//"SELECT * FROM users WHERE username='$username' AND password = '$password';
-//$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
+$userid =$_POST["user_id"];
+$taskid =$_POST["task_id"];
+$groupid =$_POST["group_id"];
 
 $result = $conn->query($query);
 if($result){
   $id = $conn->lastInsertId();
+
+  $query="SELECT tasks WHERE group_id=$_POST['groupid']";
   
-  $query="UPDATE users SET group_id='$id' WHERE id='$userid'";
   $result = $conn->query($query);
   if($result){
     echo json_encode(array(
