@@ -6,19 +6,27 @@ try {
 }
 
 $passcode =$_POST["passcode"];
-
+$userid =$_POST["userid"];
 
 $query = "SELECT * FROM groups WHERE passcode = '$passcode'";
-
-//"SELECT * FROM users WHERE username='$username' AND password = '$password';
-
-//USE THIS TO TEST IF INFO IS GOING INTO DATABASE:
-//$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
 
 $result = $conn->query($query);
 if($result){
   $groups=$result->fetchAll();
-  echo json_encode($groups);
+  //var_dump($groups);
+  $id=$groups[0]["group_id"];
+  
+  $query="UPDATE users SET group_id='$id' WHERE id='$userid'";
+  $result = $conn->query($query);
+  if($result){
+    echo json_encode(array(
+      'status'=>true,
+      'id'=>$id,
+    ));
+  } else {
+    echo json_encode(false);
+  }
+  //echo json_encode($groups);
   
 } else {
   echo json_encode(false);

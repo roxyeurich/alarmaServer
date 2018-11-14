@@ -7,11 +7,7 @@ try {
 
 $id =$_POST["id"];
 
-
-
 $query = "SELECT * FROM users WHERE id='$id'";
-
-//"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
 //USE THIS TO TEST IF INFO IS GOING INTO DATABASE:
 //$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";

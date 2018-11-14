@@ -5,16 +5,16 @@ try {
   echo "Error".$e->getMessage();
 }
 
-$group_id=$_POST["group_id"];
-$task_description =$_POST["task_description"];
-$task_title =$_POST["task_title"];
-$rating =$_POST["score"];
+//$score =$_POST["score"];
 
-$query = "INSERT INTO tasks (group_id, task_title, task_description, score) VALUES ('$group_id', '$task_title', '$task_description', '$rating')";
+$id=$_POST['id'];
+$query="SELECT SUM(score) AS score FROM tasks WHERE user_id=$id";
 
 $result = $conn->query($query);
 if($result){
-  echo json_encode(true);
+  
+  $tasks=$result->fetchAll();
+  echo json_encode($tasks); 
   
 } else {
   echo json_encode(false);
