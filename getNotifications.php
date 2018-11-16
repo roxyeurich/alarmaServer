@@ -8,7 +8,7 @@ try {
 
 $group_id =$_POST["group_id"];
 
-$query = "SELECT * FROM tasks WHERE group_id='$group_id' AND (task_done != 1 || task_done IS NULL) ORDER BY task_id DESC";
+$query = "SELECT * FROM notifications WHERE group_id='$group_id' ORDER BY id DESC";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
@@ -17,8 +17,8 @@ $query = "SELECT * FROM tasks WHERE group_id='$group_id' AND (task_done != 1 || 
 
 $result = $conn->query($query);
 if($result){
-  $users=$result->fetchAll();
-  echo json_encode($users); 
+  $notif=$result->fetchAll();
+  echo json_encode($notif); 
   
 } else {
   echo json_encode(false);
