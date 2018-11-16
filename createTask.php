@@ -11,7 +11,7 @@ $task_description =$_POST["task_description"];
 $task_title =$_POST["task_title"];
 $rating =$_POST["score"];
 
-$query = "INSERT INTO tasks (group_id, task_title, task_description, score) VALUES ('$group_id', '$task_title', '$task_description', '$rating')";
+$query = "INSERT INTO tasks (group_id, task_title, task_description, score, start_time) VALUES ('$group_id', '$task_title', '$task_description', '$rating', NOW())";
 
 $result = $conn->query($query);
 if($result){

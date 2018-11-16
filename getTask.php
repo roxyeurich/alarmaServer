@@ -1,30 +1,25 @@
 <?php
+header('Access-Control-Allow-Origin: *'); 
 try {
   $conn = new PDO("mysql:host=d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=qefvl1o77u29l7gz","zuaks09ibij50mi6","ow722kdbo87l4aok");
 } catch (PDOException $e){
   echo "Error".$e->getMessage();
 }
 
-$userid =$_POST["user_id"];
-$taskid =$_POST["task_id"];
-$groupid =$_POST["group_id"];
+$group_id =$_POST["group_id"];
+
+$query = "SELECT * FROM tasks WHERE group_id='$group_id' AND (task_done != 1 || task_done IS NULL) ORDER BY task_id DESC";
+
+//"SELECT * FROM users WHERE username='$username' AND password = '$password';
+
+//USE THIS TO TEST IF INFO IS GOING INTO DATABASE:
+//$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
 
 $result = $conn->query($query);
 if($result){
-  $id = $conn->lastInsertId();
-
-  $query="SELECT tasks WHERE group_id=$_POST['groupid']";
+  $users=$result->fetchAll();
+  echo json_encode($users); 
   
-  $result = $conn->query($query);
-  if($result){
-    echo json_encode(array(
-    'status'=>true,
-    'id'=>$id,
-  ));
-  } else {
-    echo json_encode(false);
-  }
-
 } else {
   echo json_encode(false);
 }
