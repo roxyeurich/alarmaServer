@@ -8,7 +8,9 @@ try {
 
 $id =$_POST["id"];
 
-$query = "SELECT * FROM users WHERE id='$id'";
+$query = "SELECT users.id, users.username, groups.location AS location_main FROM users 
+LEFT JOIN groups ON groups.group_id = users.group_id 
+WHERE users.id='$id'";
 
 //USE THIS TO TEST IF INFO IS GOING INTO DATABASE:
 //$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";

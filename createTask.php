@@ -11,13 +11,10 @@ $task_description =$_POST["task_description"];
 $task_title =$_POST["task_title"];
 $rating =$_POST["score"];
 
-$query = "INSERT INTO tasks (group_id, task_title, task_description, score, start_time) VALUES ('$group_id', '$task_title', '$task_description', '$rating', NOW())";
+$query = "INSERT INTO tasks (group_id, task_title, task_description, score) VALUES ('$group_id', '$task_title', '$task_description', '$rating')";
 
 $result = $conn->query($query);
 if($result){
-  $message="You have a new task! ".$task_title;
-  $query = "INSERT INTO notifications (message, group_id) VALUES ('$message', '$group_id')";
-  $result = $conn->query($query);
   echo json_encode(true);
   
 } else {

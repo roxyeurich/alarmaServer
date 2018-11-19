@@ -9,9 +9,10 @@ try {
 $group_name =$_POST["group_name"];
 $passcode =$_POST["passcode"];
 $userid =$_POST["userid"];
+$location = $_POST["location"];
 
 
-$query = "INSERT INTO groups (group_name, passcode) VALUES ('$group_name','$passcode')";
+$query = "INSERT INTO groups (group_name, passcode, location) VALUES ('$group_name','$passcode', '$location')";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 //$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
