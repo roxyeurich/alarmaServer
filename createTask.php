@@ -10,8 +10,9 @@ $group_id=$_POST["group_id"];
 $task_description =$_POST["task_description"];
 $task_title =$_POST["task_title"];
 $rating =$_POST["score"];
+$end_time =$_POST["end_time"];
 
-$query = "INSERT INTO tasks (group_id, task_title, task_description, score) VALUES ('$group_id', '$task_title', '$task_description', '$rating')";
+$query = "INSERT INTO tasks (group_id, task_title, task_description, score, end_time) VALUES ('$group_id', '$task_title', '$task_description', '$rating', '$end_time')";
 
 $result = $conn->query($query);
 if($result){
