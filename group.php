@@ -21,12 +21,13 @@ $result = $conn->query($query);
 if($result){
   $id = $conn->lastInsertId();
   
-  $query="UPDATE users SET group_id='$id' WHERE id='$userid'";
+  $query="UPDATE users SET group_id='$id', admin=2 WHERE id='$userid'";
   $result = $conn->query($query);
   if($result){
     echo json_encode(array(
     'status'=>true,
     'id'=>$id,
+    'admin'=>2
   ));
   } else {
     echo json_encode(false);
