@@ -19,8 +19,8 @@ $query = "SELECT * FROM groups WHERE group_id='$group_id'";
 
 $result = $conn->query($query);
 if($result){
-  $users=$result->fetchAll();
-  echo json_encode($users); 
+  $passcode=$result->fetchAll();
+  echo json_encode($passcode); 
   
 } else {
   echo json_encode(false);
