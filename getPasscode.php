@@ -9,8 +9,9 @@ try {
 $group_id =$_POST["group_id"];
 $group_name =$_POST["group_name"];
 $passcode =$_POST["passcode"];
+$task_title =$_POST["task_title"];
 
-$query = "SELECT * FROM groups WHERE group_id='$group_id'";
+$query = "SELECT * FROM tasks WHERE task_title='$task_title'";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
