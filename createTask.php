@@ -15,6 +15,11 @@ $query = "INSERT INTO tasks (group_id, task_title, task_description, score) VALU
 
 $result = $conn->query($query);
 if($result){
+  
+   $message="You have a new task! ".$task_title;
+  $query = "INSERT INTO notifications (message, group_id) VALUES ('$message', '$group_id')";
+  $result = $conn->query($query);
+  
   echo json_encode(true);
   
 } else {
