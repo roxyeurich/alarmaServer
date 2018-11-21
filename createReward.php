@@ -6,11 +6,11 @@ try {
   echo "Error".$e->getMessage();
 }
 
-$id=$_POST["id"];
+
 $reward_title =$_POST["reward_title"];
 $reward_points =$_POST["reward_points"];
 
-$query = "INSERT INTO rewards (id, reward_title, reward_points) VALUES ('$id', '$reward_title', '$$reward_points')";
+$query = "INSERT INTO rewards (reward_title, reward_points) VALUES ('$reward_title', '$$reward_points')";
 
 $result = $conn->query($query);
 if($result){
