@@ -6,9 +6,9 @@ try {
   echo "Error".$e->getMessage();
 }
 
-$id =$_POST["id"];
+$userid =$_POST["userid"];
 
-$query = "UPDATE users SET group_id=NULL WHERE group_id='$group_id'";
+$$query="UPDATE users SET group_id=NULL WHERE id='$userid'";
 echo $query;
   
 $result = $conn->query($query);
