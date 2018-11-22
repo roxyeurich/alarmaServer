@@ -16,8 +16,8 @@ $query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY id DESC";
 //$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
 
 $result = $conn->query($query);
-if($rewards){
-  $users=$result->fetchAll();
+if($result){
+  $rewards=$result->fetchAll();
   echo json_encode($rewards); 
   
 } else {
