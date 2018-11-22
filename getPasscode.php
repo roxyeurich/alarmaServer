@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: *'); 
+//header('Access-Control-Allow-Origin: *'); 
 try {
   $conn = new PDO("mysql:host=d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=qefvl1o77u29l7gz","zuaks09ibij50mi6","ow722kdbo87l4aok");
 } catch (PDOException $e){
@@ -9,9 +9,8 @@ try {
 $group_id =$_POST["group_id"];
 $group_name =$_POST["group_name"];
 $passcode =$_POST["passcode"];
-$task_title =$_POST["task_title"];
 
-$query = "SELECT * FROM tasks WHERE task_title='$task_title'";
+$query = "SELECT * FROM groups WHERE group_id='$group_id'";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 

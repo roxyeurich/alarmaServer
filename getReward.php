@@ -17,8 +17,8 @@ $query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY id DESC LIMI
 
 $result = $conn->query($query);
 if($result){
-  $rewar=$result->fetchAll();
-  echo json_encode($rewar); 
+  $rewars=$result->fetchAll();
+  echo json_encode($rewars); 
   
 } else {
   echo json_encode(false);
