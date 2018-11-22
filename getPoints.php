@@ -6,9 +6,9 @@ try {
   echo "Error".$e->getMessage();
 }
 
-$group_id =$_POST["group_id"];
+$user_id =$_POST["user_id"];
 
-$query = "SELECT * FROM notifications WHERE group_id='$group_id' ORDER BY id DESC LIMIT 0, 5";
+$query = "SELECT * FROM tasks WHERE user_id='$user_id'";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
@@ -17,8 +17,8 @@ $query = "SELECT * FROM notifications WHERE group_id='$group_id' ORDER BY id DES
 
 $result = $conn->query($query);
 if($result){
-  $notif=$result->fetchAll();
-  echo json_encode($notif); 
+  $users=$result->fetchAll();
+  echo json_encode($users); 
   
 } else {
   echo json_encode(false);

@@ -7,8 +7,8 @@ try {
 }
 
 $group_id =$_POST["group_id"];
-
-$query = "SELECT * FROM notifications WHERE group_id='$group_id' ORDER BY id DESC LIMIT 0, 5";
+    
+$query = "SELECT * FROM groups WHERE group_id='$group_id'";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
@@ -17,8 +17,8 @@ $query = "SELECT * FROM notifications WHERE group_id='$group_id' ORDER BY id DES
 
 $result = $conn->query($query);
 if($result){
-  $notif=$result->fetchAll();
-  echo json_encode($notif); 
+  $users=$result->fetchAll();
+  echo json_encode($users); 
   
 } else {
   echo json_encode(false);
