@@ -11,7 +11,7 @@ $reward_title =$_POST["reward_title"];
 $reward_points =$_POST["reward_points"];
 $group_id =$_POST["group_id"];
 
-$query = "INSERT INTO rewards (reward_title, reward_points, group_id) VALUES ('$reward_title', '$reward_points', '$group_id')";
+$query = "INSERT INTO rewards (reward_title, reward_points) VALUES ('$reward_title', '$reward_points')";
 
 $result = $conn->query($query);
 if($result){
