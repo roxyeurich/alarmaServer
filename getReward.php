@@ -8,7 +8,7 @@ try {
 
 $group_id =$_POST["group_id"];
 
-$query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY id DESC LIMIT 0, 5";
+$query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY id DESC";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
@@ -16,9 +16,9 @@ $query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY id DESC LIMI
 //$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
 
 $result = $conn->query($query);
-if($result){
-  $rewars=$result->fetchAll();
-  echo json_encode($rewars); 
+if($rewards){
+  $users=$result->fetchAll();
+  echo json_encode($rewards); 
   
 } else {
   echo json_encode(false);
