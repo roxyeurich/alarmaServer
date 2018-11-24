@@ -8,7 +8,7 @@ try {
 
 $group_id =$_POST["group_id"];
 
-$query = "SELECT * FROM tasks WHERE group_id='$group_id' AND (task_done != 1 || task_done IS NULL) ORDER BY id DESC";
+$query = "SELECT * FROM tasks WHERE group_id='$group_id' AND (task_done != 1 || task_done IS NULL) ";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
