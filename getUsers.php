@@ -8,7 +8,7 @@ try {
 
 $group_id =$_POST["group_id"];
 
-$query = "SELECT id, username, (SELECT SUM(score) FROM tasks WHERE user_id=users.id) AS score, latitude, longitude FROM users WHERE group_id='$group_id'";
+$query = "SELECT id, username, users.latitude, users.longitude, (SELECT SUM(score) FROM tasks WHERE user_id=users.id) AS score FROM users WHERE group_id='$group_id'";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
