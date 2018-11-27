@@ -8,7 +8,7 @@ try {
 
 $group_id =$_POST["group_id"];
 
-$query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY id DESC";
+$query = "SELECT * FROM rewards WHERE group_id='$group_id' ORDER BY reward_points DESC";
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 
