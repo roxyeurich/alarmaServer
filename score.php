@@ -10,7 +10,6 @@ $userid =$_POST["user_id"];
 $id =$_POST["task_id"];
 
 $query = "UPDATE tasks SET user_id='$userid' WHERE task_id='$id'";
-echo $query;
   
 $result = $conn->query($query);
 if($result){
