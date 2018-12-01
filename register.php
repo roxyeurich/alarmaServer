@@ -11,12 +11,6 @@ $password =$_POST["password"];
 $username =$_POST["username"];
 //$location_main =$_POST["location_main"];
 
-$query = "SELECT * FROM users WHERE email='$email'";
-
-if(!is_email($email)) {
-  echo "Email already exists";
-}
-
 
 $query = "INSERT INTO users (email, password, username, admin) VALUES ('$email', '$password', '$username', 1)";
 
