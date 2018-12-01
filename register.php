@@ -13,9 +13,9 @@ $username =$_POST["username"];
 
 $query = "INSERT INTO users (email, password, username, admin) VALUES ('$email', '$password', '$username', 1)";
 
-   $sql2=mysql_query("SELECT * FROM users WHERE email = '$email'");
+$query = "SELECT * FROM users WHERE email='$email'";
 
-   if(mysql_num_rows($sql2)>0)
+   if(mysql_num_rows($query)>0)
      {
         echo "Email already exists";
      }
@@ -31,7 +31,10 @@ if($result){
     'id'=>$userid,
   ));
   
-} else {
+} else if (mysql_num_rows($query)>0) {
+  echo "Email already exists";
+}
+else {
   echo json_encode(false);
 }
 
