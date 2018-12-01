@@ -13,6 +13,13 @@ $username =$_POST["username"];
 
 $query = "INSERT INTO users (email, password, username, admin) VALUES ('$email', '$password', '$username', 1)";
 
+   $sql2=mysql_query("SELECT * FROM users WHERE email = '$email'");
+
+   if(mysql_num_rows($sql2)>=1)
+     {
+        echo alert("Email already exists");
+     }
+
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
 //$query = "INSERT INTO users (email, password, username, status) VALUES ('test', 'test', 'test', 1)";
 
