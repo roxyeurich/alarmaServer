@@ -13,7 +13,7 @@ $username =$_POST["username"];
 
 $query = "SELECT * FROM users WHERE email='$email'";
 
-if(!is_email($mail)) {
+if(!is_email($email)) {
   echo "Email already exists";
 }
 
