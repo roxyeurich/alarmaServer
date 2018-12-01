@@ -15,9 +15,9 @@ $query = "INSERT INTO users (email, password, username, admin) VALUES ('$email',
 
    $sql2=mysql_query("SELECT * FROM users WHERE email = '$email'");
 
-   if(mysql_num_rows($sql2)>=1)
+   if(mysql_num_rows($sql2)>0)
      {
-        echo alert("Email already exists");
+        echo "Email already exists";
      }
 
 //"SELECT * FROM users WHERE username='$username' AND password = '$password';
