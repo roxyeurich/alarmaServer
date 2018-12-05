@@ -9,8 +9,8 @@ try {
 $userid =$_POST["user_id"];
 $avatar =$_POST["avatar"];
 
-$query = "UPDATE users SET user_id='$userid' WHERE avatar='$avatar'";
-echo $query;
+$query = "UPDATE users SET avatar='$avatar' WHERE id='$userid'";
+//echo $query;
   
 $result = $conn->query($query);
 if($result){
