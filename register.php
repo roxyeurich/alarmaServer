@@ -41,8 +41,6 @@ if($result){
         'id'=>$userid,
       ));
 
-    } else {
-      echo json_encode(false);
     }
   }
   
