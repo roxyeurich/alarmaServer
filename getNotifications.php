@@ -23,5 +23,6 @@ if($result){
 } else {
   echo json_encode(false);
 }
-
+$conn=null;
+$result=null;
 ?>

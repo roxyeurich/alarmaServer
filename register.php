@@ -51,5 +51,6 @@ if($result){
   echo json_encode(false);
 }
 
-
+$conn=null;
+$result=null;
 ?>
